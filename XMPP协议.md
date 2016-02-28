@@ -1,9 +1,10 @@
-#XMPP协议
+#XMPP协议#
 
-* ###XML Stanzas
+* ###XML Stanzas###
 
-* ####每个客户端用JID来作为身份标识 `[user"@"]domain["/"resource]`
-* ####示例
+* ####每个客户端用JID来作为身份标识 `[user"@"]domain["/"resource]`####
+
+* ####示例####
 ```xml
     <stream:stream>
     
@@ -25,12 +26,14 @@
     
     </stream:stream>
 ```
-* ####XML Stanzas通用属性
+
+* ####XML Stanzas通用属性####
     * `from` -> 源JID（服务器一般不信任，一般根据连接状态自动获取）
     * `to` -> 目的JID
     * `type` -> 
     * `id` -> 服务器和客户端之间的标识符
-* ####stream结构
+
+* ####stream结构####
     * Client to Server
 
       ```xml
@@ -58,7 +61,8 @@
       ```xml
       </stream:stream>
       ```
-* ####presence结构
+ 
+* ####presence结构####
 ```xml
     <presence
         from="jackson@gmail.com"
@@ -86,7 +90,7 @@
         * xa：长时间不在
         * dnd：不想被打扰
 
-* ####message结构
+* ####message结构####
 ```xml
     <message
         from="jackson@gmail.com"
@@ -101,7 +105,8 @@
         * groupchat：群聊（多人对话）
         * headline：头条内容
         * error：错误
-* ####IQ结构(Information Query)
+
+* ####IQ结构(Information Query)####
 ```xml
     <!--request roster by get-->
     <!--from and to must be same-->
