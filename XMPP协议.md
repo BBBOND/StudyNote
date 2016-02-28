@@ -1,10 +1,12 @@
-#XMPPĞ­Òé#
+#XMPPåè®®#
 
 * ###XML Stanzas###
 
-* ####Ã¿¸ö¿Í»§¶ËÓÃJIDÀ´×÷ÎªÉí·İ±êÊ¶ `[user"@"]domain["/"resource]`####
+* ####æ¯ä¸ªå®¢æˆ·ç«¯ç”¨JIDæ¥ä½œä¸ºèº«ä»½æ ‡è¯† `[user"@"]domain["/"resource]`####
 
-* ####Ê¾Àı####
+* ####ç¤ºä¾‹####
+
+
 ```xml
     <stream:stream>
     
@@ -27,13 +29,13 @@
     </stream:stream>
 ```
 
-* ####XML StanzasÍ¨ÓÃÊôĞÔ####
-    * `from` -> Ô´JID£¨·şÎñÆ÷Ò»°ã²»ĞÅÈÎ£¬Ò»°ã¸ù¾İÁ¬½Ó×´Ì¬×Ô¶¯»ñÈ¡£©
-    * `to` -> Ä¿µÄJID
+* ####XML Stanzasé€šç”¨å±æ€§####
+    * `from` -> æºJIDï¼ˆæœåŠ¡å™¨ä¸€èˆ¬ä¸ä¿¡ä»»ï¼Œä¸€èˆ¬æ ¹æ®è¿æ¥çŠ¶æ€è‡ªåŠ¨è·å–ï¼‰
+    * `to` -> ç›®çš„JID
     * `type` -> 
-    * `id` -> ·şÎñÆ÷ºÍ¿Í»§¶ËÖ®¼äµÄ±êÊ¶·û
+    * `id` -> æœåŠ¡å™¨å’Œå®¢æˆ·ç«¯ä¹‹é—´çš„æ ‡è¯†ç¬¦
 
-* ####stream½á¹¹####
+* ####streamç»“æ„####
     * Client to Server
 
       ```xml
@@ -45,6 +47,7 @@
       ```
     * Server to Client      
 
+
       ```xml
       <stream:stream
           from="example.com"
@@ -53,30 +56,35 @@
           xmlns:stream="http://etherx.jabber.org/streams"
           version="1.0">
       ```
+      
     * Close Client
+    
       ```xml
       </stream:stream>
       ```
     * Close Server
+    
       ```xml
       </stream:stream>
       ```
  
-* ####presence½á¹¹####
+* ####presenceç»“æ„####
+
 ```xml
     <presence
         from="jackson@gmail.com"
         to="jimmy@msn.com"
         type="unavailable"/>
 ```
-    * `type`¿ÉÑ¡²ÎÊı£º
-        * available£ºÉÏÏß
-        * unavalible£ºÏÂÏß
-        * subscribe£º¶©ÔÄÄ³ÓÃ»§ÔÚÏß×´Ì¬
-        * unsubscribe£ºÈ¡Ïû¶©ÔÄÄ³ÓÃ»§ÔÚÏß×´Ì¬
-        * subscribed£ºÊÚÈ¨Ä³ÓÃ»§¶©ÔÄ
-        * unsubscribed£ºÈ¡ÏûÊÚÈ¨Ä³ÓÃ»§¶©ÔÄ
-        * error£º´íÎó
+    * `type`å¯é€‰å‚æ•°ï¼š
+        * availableï¼šä¸Šçº¿
+        * unavalibleï¼šä¸‹çº¿
+        * subscribeï¼šè®¢é˜…æŸç”¨æˆ·åœ¨çº¿çŠ¶æ€
+        * unsubscribeï¼šå–æ¶ˆè®¢é˜…æŸç”¨æˆ·åœ¨çº¿çŠ¶æ€
+        * subscribedï¼šæˆæƒæŸç”¨æˆ·è®¢é˜…
+        * unsubscribedï¼šå–æ¶ˆæˆæƒæŸç”¨æˆ·è®¢é˜…
+        * errorï¼šé”™è¯¯
+
 
     ```xml
     <presence>
@@ -84,13 +92,15 @@
         <status>show to do something</status>
     </presence>
     ```
-    * `<show>`¿ÉÑ¡²ÎÊı£º
-        * chat£ºÔÚÏß£¬Ô¸ÒâÁÄÌì
-        * away£º¶ÌÊ±¼ä²»ÔÚ
-        * xa£º³¤Ê±¼ä²»ÔÚ
-        * dnd£º²»Ïë±»´òÈÅ
+    
+    * `<show>`å¯é€‰å‚æ•°ï¼š
+        * chatï¼šåœ¨çº¿ï¼Œæ„¿æ„èŠå¤©
+        * awayï¼šçŸ­æ—¶é—´ä¸åœ¨
+        * xaï¼šé•¿æ—¶é—´ä¸åœ¨
+        * dndï¼šä¸æƒ³è¢«æ‰“æ‰°
 
-* ####message½á¹¹####
+* ####messageç»“æ„####
+
 ```xml
     <message
         from="jackson@gmail.com"
@@ -99,14 +109,15 @@
         <body>Hello World!</body>
     </message>
 ```
-    * `type`¿ÉÑ¡²ÎÊı£º
-        * normal£º¶ÀÁ¢ÏûÏ¢£¨Ä¬ÈÏ£©
-        * chat£ºÒ»¶ÔÒ»¶Ô»°
-        * groupchat£ºÈºÁÄ£¨¶àÈË¶Ô»°£©
-        * headline£ºÍ·ÌõÄÚÈİ
-        * error£º´íÎó
+    * `type`å¯é€‰å‚æ•°ï¼š
+        * normalï¼šç‹¬ç«‹æ¶ˆæ¯ï¼ˆé»˜è®¤ï¼‰
+        * chatï¼šä¸€å¯¹ä¸€å¯¹è¯
+        * groupchatï¼šç¾¤èŠï¼ˆå¤šäººå¯¹è¯ï¼‰
+        * headlineï¼šå¤´æ¡å†…å®¹
+        * errorï¼šé”™è¯¯
 
-* ####IQ½á¹¹(Information Query)####
+* ####IQç»“æ„(Information Query)####
+
 ```xml
     <!--request roster by get-->
     <!--from and to must be same-->
@@ -118,11 +129,12 @@
         <query xmlns="jabber:iq:roster"/>
     </iq>
 ``` 
-    * `type`¿ÉÑ¡²ÎÊı£º
-        * get£º»ñÈ¡Êı¾İÇëÇó£¬ÀàËÆhttpµÄget
-        * set£ºÉèÖÃÊı¾İÇëÇó£¬ÀàËÆhttpµÄpost
-        * result£ºÏìÓ¦ÇëÇó
-        * error£º´íÎó
+    * `type`å¯é€‰å‚æ•°ï¼š
+        * getï¼šè·å–æ•°æ®è¯·æ±‚ï¼Œç±»ä¼¼httpçš„get
+        * setï¼šè®¾ç½®æ•°æ®è¯·æ±‚ï¼Œç±»ä¼¼httpçš„post
+        * resultï¼šå“åº”è¯·æ±‚
+        * errorï¼šé”™è¯¯
+
 
     ```xml
     <!--reply request-->
