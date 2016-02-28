@@ -76,6 +76,8 @@
         to="jimmy@msn.com"
         type="unavailable"/>
 ```
+
+
     * `type`可选参数：
         * available：上线
         * unavalible：下线
@@ -101,6 +103,7 @@
 
 * ####message结构####
 
+
 ```xml
     <message
         from="jackson@gmail.com"
@@ -109,6 +112,8 @@
         <body>Hello World!</body>
     </message>
 ```
+
+
     * `type`可选参数：
         * normal：独立消息（默认）
         * chat：一对一对话
@@ -129,6 +134,8 @@
         <query xmlns="jabber:iq:roster"/>
     </iq>
 ``` 
+
+
     * `type`可选参数：
         * get：获取数据请求，类似http的get
         * set：设置数据请求，类似http的post
